@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -8,7 +8,7 @@ export default function Home() {
   const handlePress = (value: string): void => {
     if (value === '=') {
       try {
-        setResult(eval(input).toString()); // Use a safer library in production
+        setResult(eval(input).toString()); 
       } catch {
         setResult('Error');
       }
@@ -63,6 +63,11 @@ export default function Home() {
           {renderButton('0', { flex: 2 })}
         </View>
       </View>
+
+      {/* Created by Text Section */}
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>Created by Pranay Ushir</Text>
+      </View>
     </View>
   );
 }
@@ -79,52 +84,68 @@ const styles = StyleSheet.create({
     backgroundColor: '#1E1E1E',
     padding: 20,
     borderBottomColor: '#333',
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
   },
   inputText: {
-    fontSize: 40,
+    fontSize: 50,
     color: '#FFFFFF',
+    fontWeight: '600',
   },
   resultText: {
     fontSize: 30,
     color: '#4CAF50',
     marginTop: 10,
+    fontWeight: '500',
   },
   buttonsContainer: {
     flex: 2,
-    padding: 10,
+    padding: 20,
     backgroundColor: '#1E1E1E',
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 10,
+    marginBottom: 15,
   },
   button: {
     flex: 1,
-    height: 70,
+    height: 80,
     marginHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#333333',
-    borderRadius: 10,
-    elevation: 5,
+    borderRadius: 15,
+    elevation: 6,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   buttonText: {
-    fontSize: 24,
+    fontSize: 28,
     color: '#FFFFFF',
+    fontWeight: '500',
   },
   operatorButton: {
     backgroundColor: '#FF9800',
   },
   equalsButton: {
     backgroundColor: '#4CAF50',
+    borderRadius: 20,
   },
   clearButton: {
     backgroundColor: '#F44336',
+  },
+  footer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 15,
+    backgroundColor: '#1E1E1E',
+  },
+  footerText: {
+    fontSize: 18,
+    color: '#FFFFFF',
+    marginTop: 15,
+    fontWeight: '400',
   },
 });
