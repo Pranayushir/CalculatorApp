@@ -66,7 +66,7 @@ export default function Home() {
 
       {/* Created by Text Section */}
       <View style={styles.footer}>
-        <Text style={styles.footerText}>Created by Pranay Ushir</Text>
+        <Text style={styles.footerText}>Calc by Pranay</Text>
       </View>
     </View>
   );
